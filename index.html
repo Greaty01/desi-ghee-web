@@ -64,7 +64,7 @@
 
     /* Sections */
     section{margin-top:26px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .grid-3{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
     .small{background:#fff;padding:16px;border-radius:12px}
 
     footer{margin-top:30px;text-align:center;color:var(--muted);font-size:14px}
@@ -111,11 +111,7 @@
             </div>
             <div class="small">
               <h4>Shipping</h4>
-              <p style="color:var(--muted)">Pan-India shipping available. Free shipping on orders above ₹3000.</p>
-            </div>
-            <div class="small">
-              <h4>Guarantee</h4>
-              <p style="color:var(--muted)">Freshness guaranteed. If you are not satisfied, contact us within 7 days for a refund.</p>
+              <p style="color:var(--muted)">Pan-India shipping available. Free shipping on orders above ₹2L.</p>
             </div>
           </div>
         </section>
@@ -193,10 +189,7 @@
     function buyWhatsApp(){
       const qty = parseInt(document.getElementById('qtyInput').value || 1);
       const total = qty * PRICE_1L;
-      const address = prompt("Please enter your delivery address:");
-      const phone = prompt("Please enter your phone number:");
-      if(!address || !phone){ alert("Address and phone are required."); return; }
-      const msg = encodeURIComponent(`Hello, I want to order PureVillage Ghee - ${qty} L. Total: ₹${total}. Address: ${address}, Phone: ${phone}. Note: Online payment only.`);
+      const msg = encodeURIComponent(`Hello, I want to order PureVillage Ghee - ${qty} L. Total: ₹${total}. Online payment only.`);
       const phoneNum = '919999273475';
       window.open(`https://wa.me/${phoneNum}?text=${msg}`, '_blank');
     }
